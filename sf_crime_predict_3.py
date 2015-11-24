@@ -4,6 +4,25 @@ import zipfile
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
 
+#####################################################################
+# Author: Gus Chadney
+# Date: 11/11/15
+#
+# Title: Kaggle San Fransisco Crime Classification
+#
+# Description: In this challenge a data set was made available which
+#              had a list of recorded crimes in the San Fransisco
+# area, along with metadata which recorded the datetime and location
+# that the crime occured.  After loading the data into a data frame,
+# the latitude and longitude variables were digitised into n bins, and
+# the numerical, day of week and hour of day were extracted from the
+# datetime variable.
+# A number of models were fitted, focusing on Random Forests and
+# K nearest neighbours (more details below).
+#
+#####################################################################
+
+#####################################################################
 # Model/feature selection:
 # Algo 1:  'Xbin', 'Ybin', 'day' - RF(n=20) - score = 8.22
 #          increased lat/long bin size from 1000 to 120000
@@ -25,6 +44,7 @@ from sklearn.neighbors import KNeighborsClassifier
 #          'Xbin', 'Ybin', 'day', 'hour' - RF(n=50)
 #                                        - KNN(n=15)
 #                                          score = 5.74
+#####################################################################
 
 # Dict to map day of week to number
 dayOfWeekMap = {'Monday': 0,
